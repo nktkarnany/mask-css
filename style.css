@@ -43,14 +43,15 @@ i.robot {
   background-position: 0 center, center;
   background-image: -webkit-radial-gradient( 50% 50%, 60% 80%, hsla(0, 100%, 50%, .7), hsla(0, 100%, 20%, .8) 60%, hsla(0, 100%, 10%, 1)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/79/mask-icons-metal.jpg);
   -webkit-mask-image: url('method-draw-image.svg'), url('method-draw-image-face.svg');
-  -webkit-mask-position: 0 0, 0px 23px;
+  -webkit-mask-position: 0 0, 0px 12px;
   -webkit-mask-composite: source-over;
   transition: -webkit-mask-position .3s cubic-bezier(.65, .06, 1, .42);
 }
 
 i.robot:hover {
-  -webkit-mask-position: 0 0, 0px 0px;
+  -webkit-mask-position: 0 0, 0px -2px;
   transition: -webkit-mask-position .2s cubic-bezier(0, .40, .20, 1);
+  background-image: -webkit-radial-gradient( 50% 50%, 60% 80%, hsla(120, 100%, 50%, .7), hsla(120, 100%, 20%, .8) 60%, hsla(120, 100%, 10%, 1)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/79/mask-icons-metal.jpg);
 }
 
 i.robot:active {
@@ -74,8 +75,8 @@ i.robot:active {
 i {
   display: inline-block;
   position: relative;
-  width: 640px;
-  height: 480px;
+  width: 250px;
+  height: 231px;
   cursor: pointer;
   filter: drop-shadow( 0 1px 1px hsla(0, 0%, 100%, .5)) drop-shadow( 0 -6px 6px hsla(0, 0%, 100%, .5)) drop-shadow( 0 10px 10px hsla(0, 0%, 0%, .3));
   -webkit-mask-repeat: no-repeat;
