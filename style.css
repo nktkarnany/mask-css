@@ -25,29 +25,34 @@ body {
 
 /* Animated Icons using SVG with CSS masks */
 
-
-/* Robot ---------------------------- */
-
-i.robot {
+i {
+  display: inline-block;
+  cursor: pointer;
+  width: 250px;
+  height: 231px;
   background: url('method-draw-image.svg');
-  /* Fallback */
-  background-position: 0 center, center;
+  /* Fallback Background If CSS Masks is not supported by a browser */
+
   background-image: -webkit-radial-gradient( 50% 50%, 60% 80%, hsla(0, 100%, 50%, .7), hsla(0, 100%, 20%, .8) 60%, hsla(0, 100%, 10%, 1));
   -webkit-mask-image: url('method-draw-image.svg'), url('method-draw-image-face.svg');
+
   -webkit-mask-position: 0 0, 0px 12px;
-  -webkit-mask-composite: source-over;
+
   transition: -webkit-mask-position .5s ease-out;
+
 }
 
-i.robot:hover {
-  -webkit-mask-position: 0 0, 0px -2px;
-  transition: -webkit-mask-position .1s cubic-bezier(0, .40, .20, 1);
+i:hover {
   background-image: -webkit-radial-gradient( 50% 50%, 60% 80%, hsla(120, 100%, 50%, .7), hsla(120, 100%, 20%, .8) 60%, hsla(120, 100%, 10%, 1));
+
+  -webkit-mask-position: 0 0, 0px -2px;
+
+  transition: -webkit-mask-position .1s cubic-bezier(0, .40, .20, 1);
 }
 
-i.robot:active {
-  -webkit-mask-position: 0 0, 0px 0px;
-  transition: -webkit-mask-position .1s cubic-bezier(.44, .08, .10, 1);
+i:active {
+  transform: translateY(2px);
+
   animation: robot-active .1s .2s cubic-bezier(.70, 0, .30, 1) infinite alternate;
 }
 
@@ -58,22 +63,4 @@ i.robot:active {
   100% {
     -webkit-mask-position: 0 0, 14px 0px;
   }
-}
-
-
-/* Global Icons styles ---------------------------- */
-
-i {
-  display: inline-block;
-  position: relative;
-  width: 250px;
-  height: 231px;
-  cursor: pointer;
-  filter: drop-shadow( 0 1px 1px hsla(0, 0%, 100%, .5)) drop-shadow( 0 -6px 6px hsla(0, 0%, 100%, .5)) drop-shadow( 0 10px 10px hsla(0, 0%, 0%, .3));
-  -webkit-mask-repeat: no-repeat;
-}
-
-i:active {
-  transform: translateY(2px);
-  filter: drop-shadow( 0 1px 1px hsla(0, 0%, 100%, .5)) drop-shadow( 0 -3px 6px hsla(0, 0%, 100%, .5)) drop-shadow( 0 5px 10px hsla(0, 0%, 0%, .3));
 }
